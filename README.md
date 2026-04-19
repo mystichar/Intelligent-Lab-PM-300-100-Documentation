@@ -13,6 +13,10 @@ Documentation of the menus and other documentation of the PM series of scales fr
 -  [Broken link to manual (from QR code on device)](http://www.intelligentwt.com/v/vspfiles/files/pdf/PM_Balance_Calibration_Instructions.pdf)
 
 ## New Documentation
+Generally speaking, MODE is a 'next' button, whereas TARE is often a 'select' button. The only time this isnt the case is when in the hidden Cal-db mode which is in the menu open by holding CAL and BL on startup.
+
+In that mode, TARE cycles through the 10s place and MODE cycles through the 100s place.
+
 So far I've been able to produce this state diagram:
 ```mermaid
 stateDiagram-v2
