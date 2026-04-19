@@ -108,3 +108,30 @@ stateDiagram-v2
       still unresolved
     end note
     ```
+
+### Serial
+On startup, if contin(uous) output is disabled, it issues a HEX 00, or . symbol
+
+During calibration, it continues to print the last weight until its done, which is probably around 0.
+In some menus, the weight printed changes to `+0000000. g  ..`
+It doesnt seem to provide an debugging serial output.
+
+### Internals
+It has what appears to be a 2-layer PCB, marked X243476A, with unused through holes areas:
+- TO DISPLAY
+- CAL, which is effectively a soldered on dip switch between ON and OFF mode ( mine soldered to ON)
+- and one unlabelled 2 x 8 connector likely for calibration/debugging
+- an unused 4-pin LED spot on the front
+- 2 pins labeled A and B, labeled RS485
+
+Other features of note are two potentiometers labeled V1 and V2 on the backside. Also D4 is shorted instead of a diode.
+
+Chips:
+- U8: BL55066; 1528 YH; CCG 5231K, with 10  pins on all 4 sides 0.75mm pitch
+- U6: BL24C02; with 2 sets of 4 pins 1mm pitch
+- U7: 078F0513A; 1722EM421, with the same package as U8
+- U5: CIRRUS; C555328SZ; DXYD1743, with 2 sides with 10 pins and maybe a 0.5mm pitch
+- U9: SIPEX SP232EEN; 813LT0521 with two sets of 8 pins, and the top right most pin cut off (perhaps a write enable? or just broken?) 1mm pitch
+- U4: LM393; PGDA, with two sets of 4 pins with a 1mm pitch
+
+The load cell is a MSP3-450h, labeled Emin=10g, Vmin=0.1g; www.lwbmt.com
